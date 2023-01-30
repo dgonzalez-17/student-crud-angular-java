@@ -17,19 +17,20 @@ public class AlumnoController {
     @Autowired
     private AlumnoRepository alumnoRepo;
 
+
     @GetMapping("/get")
-    public List<Alumno> getAlumno(){
+    public List<Alumno> getAlumno() {
         return alumnoRepo.findAll();
     }
 
     @PostMapping("/post")
-    public Alumno postAlumno(@RequestBody Alumno entryData){
+    public Alumno postAlumno(@RequestBody Alumno entryData) {
         return alumnoRepo.save(entryData);
     }
 
     @PutMapping("/put/{id}")
     public Alumno putAlumno(@PathVariable Integer id,
-                            @RequestBody Alumno entryData){
+                            @RequestBody Alumno entryData) {
         Alumno searchData = alumnoRepo.findById(id).orElse(null);
         searchData.setName(entryData.getName());
         searchData.setBirthday(entryData.getBirthday());
@@ -38,8 +39,9 @@ public class AlumnoController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteAlumno(@PathVariable Integer id){
+    public void deleteAlumno(@PathVariable Integer id) {
         alumnoRepo.deleteById(id);
     }
 
 }
+

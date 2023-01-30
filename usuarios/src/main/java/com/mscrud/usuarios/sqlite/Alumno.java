@@ -31,7 +31,7 @@ public class Alumno {
     CascadeType.MERGE
     })
     @JoinTable(name = "Asignaciones",
-    joinColumns = {@JoinColumn(name = "alumno_id")},
+    joinColumns = {@JoinColumn(name = "id")},
     inverseJoinColumns = {@JoinColumn(name = "materias_id")})
     private Set<Materias> materias = new HashSet<>();
 

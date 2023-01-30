@@ -1,0 +1,17 @@
+<nb-card>
+    <nb-card-body>
+    <h1>CREAR PROFESOR</h1>
+    <input [(ngModel)]="name" type="text" fullWidth nbInput placeholder="INGRESE EL NOMBRE">
+        <br>
+        <br>
+        <label>SELECCIONA LA MATERIA A ASIGNAR: </label>
+        <br>
+        <select [(ngModel)]="materia" ngDefaultControl fullWidth
+        placeholder="Seleccione la materia" status="success" >
+        <option *ngFor="let materia of materias" [value]="materia.id"> {{materia.title}} </option>
+      </select>
+        <br>
+        <hr>
+        <button fullWidth nbButton status="primary" (click)="crearProfesor(materia, name)" >ASIGNAR MATERIA</button>
+  </nb-card-body>
+</nb-card>

@@ -1,0 +1,34 @@
+
+<nb-card>
+  <nb-card-body>
+  <h1> EDITAR PROFESOR  {{profesor.name}}</h1>
+  <input [(ngModel)]="id" type="text" fullWidth nbInput placeholder="{{profesor.id}}" readonly>
+      <br>
+      <br>
+  <input [(ngModel)]="name" type="text" fullWidth nbInput placeholder="{{profesor.name}}">
+      <br>
+      <br>
+      <ng-container *ngIf="profesor.subject; else noSubject">
+        <input type="text" fullWidth nbInput placeholder="{{profesor.subject.title}}" readonly>
+        </ng-container>
+        <ng-container #noSubject>
+          <input type="text" fullWidth nbInput placeholder="NO TIENE MATERIAS ASIGNADAS" readonly>
+        </ng-container>
+      <br>
+      <br>
+      <label>CAMBIAR MATERIA: </label>
+      <br>
+      <select [(ngModel)]="subject"  ngDefaultControl fullWidth  
+      placeholder="Seleccione la materia" required="yes">
+        <ng-container *ngFor="let materia of materias">
+          
+          <option [value]="materia.id">{{materia.title}}</option>
+        </ng-container>
+
+      </select>
+      <br>
+      <hr>
+      <button fullWidth nbButton status="primary" (click)="editarProfesor(profesor.id, subject, name)" >ASIGNAR MATERIA</button>
+</nb-card-body>
+</nb-card>
+

@@ -1,0 +1,16 @@
+<nb-card>
+    <nb-card-body>
+    <h1>EDITAR MATERIA</h1> 
+      <form (ngSubmit)="editarMaterias()" [formGroup]="updateForm">
+      <input formControlName="id" type="text"  fullWidth nbInput placeholder="ID"readonly >
+      <input formControlName="credits" type="number"  fullWidth nbInput placeholder="CREDITOS DE LA MATERIA" required="yes">
+      <br>
+      <br>
+      <input formControlName="title" type="text" fullWidth  nbInput placeholder="TITULO" required="yes">
+    
+      <hr>
+      <button fullWidth nbButton status="primary" >EDITAR MATERIA</button>
+      
+    </form>
+    </nb-card-body>
+</nb-card>

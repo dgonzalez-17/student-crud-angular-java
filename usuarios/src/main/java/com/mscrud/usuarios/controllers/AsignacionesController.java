@@ -12,6 +12,8 @@ import com.mscrud.usuarios.sqlite.Profesor;
 import com.mscrud.usuarios.sqlite.Alumno;
 import com.mscrud.usuarios.repositories.MateriasRepository;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/asignaciones")
 public class AsignacionesController {
@@ -33,7 +35,7 @@ public class AsignacionesController {
         return profesorRepo.save(searchProfesor);
     }
 
-    @PutMapping("/AsigMatAlumno/{idAlumno}/{idMateria}")
+    @GetMapping("/AsigMatAlumno/{idAlumno}/{idMateria}")
     public Alumno asignarMateriaAlumno(@PathVariable Integer idAlumno,
                                        @PathVariable Integer idMateria){
         Alumno searchAlumno = alumnoRepo.findById(idAlumno).orElse(null);
@@ -50,6 +52,10 @@ public class AsignacionesController {
     public void eliminarMateriaDeAlumno(@PathVariable Integer idAlumno,
                                         @PathVariable Integer idMateria){
         alumnoRepo.deleteMateriaOfAlumno(idAlumno, idMateria);
+    }
+    @GetMapping("/getAsigByAlumno/{idAlumno}")
+    public List<Materias> getAsignacionByAlumno(@PathVariable Integer idAlumno){
+        return materiasRepo.findAllById(materiasRepo.findAsigByAlumno(idAlumno));
     }
 
 }

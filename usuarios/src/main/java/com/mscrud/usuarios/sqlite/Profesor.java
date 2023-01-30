@@ -13,7 +13,7 @@ public class Profesor {
     private String name;
 
     @JoinColumn(name="subject_id",unique = false)
-    @OneToOne
+    @OneToOne(cascade = CascadeType.REFRESH)
     private Materias subject;
 
     public Profesor() {

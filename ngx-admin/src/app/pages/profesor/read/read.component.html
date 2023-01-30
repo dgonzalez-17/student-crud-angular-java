@@ -1,0 +1,41 @@
+<nb-card accent="info">
+    <nb-card-header>LISTAR PROFESORES
+        <button nbButton (click)='crearProfesor()' status="success"><i class="fas fa-plus"></i></button>
+    </nb-card-header>
+    <nb-card-body>
+        <table class="table table-striped">
+            <thead>
+                <td>NOMBRE</td>
+                <td>MATERIA DICTADA</td>
+                <td>OPCIONES</td>
+            </thead>
+            <tbody>
+               <ng-container *ngFor="let profesor of profesores" >
+                <ng-container *ngIf="profesor.subject; else noSubject">
+                <tr>
+                    <td>{{profesor.name}}</td>
+                    <td>{{profesor.subject.title}}</td>
+                    <td>
+                        <button nbButton (click)="verAsignaciones(alumno.id, alumno)" status="info"><i class='fas fa-eye'></i></button>
+                        <button nbButton (click)="editarProfesor(profesor.id, profesor)" status="warning"><i class="fas fa-pencil-alt"></i></button>
+                        <button nbButton (click)="eliminarProfesor(profesor.id)" status="danger"><i class="fas fa-solid fa-trash"></i></button> 
+                </td>
+                </tr>
+                </ng-container>
+                <ng-template #noSubject>
+                    <tr>
+                        <td>{{profesor.name}}</td>
+                        <td>NO TIENE MATERIAS ASIGNADAS</td>
+                        <td>
+                            <button nbButton (click)="verAsignaciones(alumno.id, alumno)" status="info"><i class='fas fa-eye'></i></button>
+                            <button nbButton (click)="editarProfesor(profesor.id, profesor)" status="warning"><i class="fas fa-pencil-alt"></i></button>
+                            <button nbButton (click)="eliminarProfesor(profesor.id)" status="danger"><i class="fas fa-solid fa-trash"></i></button> 
+                            </td>
+                    </tr>
+                </ng-template>
+
+               </ng-container>
+            </tbody>
+        </table>
+  </nb-card-body>
+</nb-card>
