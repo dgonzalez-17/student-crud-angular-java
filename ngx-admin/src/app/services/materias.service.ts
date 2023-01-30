@@ -33,4 +33,5 @@ export class MateriasService {
   editarMaterias(id:string, candidato: Materias){
     return this.http.put<Materias>(environment.url_api_usuarios +'/materia/put/'+id, candidato);
   }
+
 }

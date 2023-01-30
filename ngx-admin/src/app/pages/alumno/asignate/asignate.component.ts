@@ -42,7 +42,7 @@ export class AsignateComponent implements OnInit {
       'La materia ha sido asignada correctamente.',
       'success'
     ),
-    this.router.navigate(['pages/alumno/readAsignacion/'+ this.alumno.id, {state:{id: this.alumno.id}}]);
+    this.router.navigate(['pages/alumno/read/']);
     console.log(this.alumno.id);
   },
   error=>{

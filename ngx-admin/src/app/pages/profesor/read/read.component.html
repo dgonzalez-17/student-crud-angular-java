@@ -16,7 +16,6 @@
                     <td>{{profesor.name}}</td>
                     <td>{{profesor.subject.title}}</td>
                     <td>
-                        <button nbButton (click)="verAsignaciones(alumno.id, alumno)" status="info"><i class='fas fa-eye'></i></button>
                         <button nbButton (click)="editarProfesor(profesor.id, profesor)" status="warning"><i class="fas fa-pencil-alt"></i></button>
                         <button nbButton (click)="eliminarProfesor(profesor.id)" status="danger"><i class="fas fa-solid fa-trash"></i></button> 
                 </td>
@@ -27,7 +26,6 @@
                         <td>{{profesor.name}}</td>
                         <td>NO TIENE MATERIAS ASIGNADAS</td>
                         <td>
-                            <button nbButton (click)="verAsignaciones(alumno.id, alumno)" status="info"><i class='fas fa-eye'></i></button>
                             <button nbButton (click)="editarProfesor(profesor.id, profesor)" status="warning"><i class="fas fa-pencil-alt"></i></button>
                             <button nbButton (click)="eliminarProfesor(profesor.id)" status="danger"><i class="fas fa-solid fa-trash"></i></button> 
                             </td>

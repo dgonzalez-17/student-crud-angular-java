@@ -24,6 +24,10 @@ eliminarAsignacion(idAlumno: string, idMateria: string){
   return this.http.delete(environment.url_api_usuarios + '/asignaciones/DeleteMatAlumno/' + idAlumno + '/' + idMateria);
 }
 
+consultarAsignacionesMat(id: string): Observable<Alumno[]> {
+  return this.http.get<Alumno[]>(environment.url_api_usuarios +'/asignaciones/getAsigbyMateria/' +id)
+}
+
 
 /*
   consultarMaterias(): Observable<Materias[]> { 

@@ -58,4 +58,8 @@ public class AsignacionesController {
         return materiasRepo.findAllById(materiasRepo.findAsigByAlumno(idAlumno));
     }
 
+    @GetMapping("/getAsigbyMateria/{idMateria}")
+    public List<Alumno> getAlumnosByMateria(@PathVariable Integer idMateria) {
+        return alumnoRepo.findAllById(alumnoRepo.findAlumnoByMateriaId(idMateria));
+    }
 }

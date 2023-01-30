@@ -28,6 +28,10 @@ export class ReadComponent implements OnInit {
     this.router.navigate(['pages/materias/update/'+id], {state:{id: id, materias: materias}});
   }
 
+  verAsignaciones(id: string, materia: Materias){
+    this.router.navigate(['pages/materias/readAsignacion/'+id], {state:{id: id, materia: materia}});
+    }
+
   eliminarMaterias(id:string):void{
     Swal.fire({
       title: 'Está a punto de eliminar una Materia.',

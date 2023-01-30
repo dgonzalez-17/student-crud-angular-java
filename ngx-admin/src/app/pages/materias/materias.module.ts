@@ -5,12 +5,13 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { MateriasRoutingModule } from './materias-routing.module';
 import { CreateComponent } from './create/create.component';
 import { ReadComponent } from './read/read.component';
+import { ReadAsignacionComponent } from './readAsignacion/readAsignacion.component';
 import { UpdateComponent } from './update/update.component';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { FormsModule, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { icon } from 'leaflet';
-import { AsignateComponent } from '../alumno/asignate/asignate.component';
+
 
 
 
@@ -18,6 +19,7 @@ import { AsignateComponent } from '../alumno/asignate/asignate.component';
   declarations: [
     CreateComponent,
     ReadComponent,
+    ReadAsignacionComponent,
     UpdateComponent,
   ],
   imports: [

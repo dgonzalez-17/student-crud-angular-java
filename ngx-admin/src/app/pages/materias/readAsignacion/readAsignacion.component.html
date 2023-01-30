@@ -1,0 +1,30 @@
+<nb-card accent="info">
+    <nb-card-header>Asignaciones de {{materia.title}}
+        <!--
+        <button nbButton (click)='AsignarMaterias(alumno.id, alumno)' status="success"><i class="fas fa-plus"></i></button>
+        -->
+    </nb-card-header>
+    <nb-card-body>
+        <table class="table table-striped">
+            <thead>
+                <td>NOMBRE</td>
+                <td>CEDULA</td>
+                <td>FECHA DE NACIMIENTO</td>
+                <td>CARRERA</td>
+            </thead>
+            <tbody>
+               <ng-container *ngFor="let alumno of alumnos" >
+                <tr>
+                    <td>{{alumno.name}}</td>
+                    <td>{{alumno.document}}</td>
+                    <td>{{alumno.birthday}}</td>
+                    <td>{{alumno.career}}</td>
+                    <td>
+                        <button nbButton (click)="eliminarAsignacion(alumno.id, materia.id)" status="danger"><i class="fas fa-solid fa-trash"></i></button>
+                    </td>
+                </tr>
+               </ng-container>
+            </tbody>
+        </table>
+  </nb-card-body>
+</nb-card>
