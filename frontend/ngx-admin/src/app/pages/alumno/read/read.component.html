@@ -1,0 +1,31 @@
+<nb-card accent="info">
+    <nb-card-header>LISTAR ALUMNOS
+        <button nbButton (click)='crearAlumno()' status="success"><i class="fas fa-plus"></i></button>
+    </nb-card-header>
+    <nb-card-body>
+        <table class="table table-striped">
+            <thead>
+                <td>NOMBRE</td>
+                <td>CEDULA</td>
+                <td>FECHA DE NACIMIENTO</td>
+                <td>CARRERA</td>
+                <td>OPCIONES</td>
+            </thead>
+            <tbody>
+               <ng-container *ngFor="let alumno of alumnos" >
+                <tr>
+                    <td>{{alumno.name}}</td>
+                    <td>{{alumno.document}}</td>
+                    <td>{{alumno.birthday}}</td>
+                    <td>{{alumno.career}}</td>
+                    <td>
+                        <button nbButton (click)="verAsignaciones(alumno.id, alumno)" status="info"><i class='fas fa-eye'></i></button>
+                        <button nbButton (click)="editarAlumno(alumno.id, alumno)" status="warning"><i class="fas fa-pencil-alt"></i></button>
+                        <button nbButton (click)="eliminarAlumno(alumno.id)" status="danger"><i class="fas fa-solid fa-trash"></i></button>
+                        </td>
+                </tr>
+               </ng-container>
+            </tbody>
+        </table>
+  </nb-card-body>
+</nb-card>
