@@ -43,10 +43,9 @@ Este es un proyecto de práctica que realicé como parte de mi proceso de aprend
 ```
 ### ⚙️ Cómo ejecutar
 1. Clonar el repositorio
-bash
-Copy
-Edit
+```bash
 git clone https://github.com/dgonzalez-17/student-crud-angular-java.git
+```
 2. Levantar el backend (Java)
 ```bash
 cd backend/usuarios
